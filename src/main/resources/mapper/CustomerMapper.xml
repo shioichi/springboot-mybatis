@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chinabigdata.dao.CustomerDao">
+    <resultMap id="BaseResultMap" type="com.chinabigdata.po.CustomerPo">
+        <result column="id" jdbcType="INTEGER" property="id"/>
+        <result column="customer_name" jdbcType="VARCHAR" property="customerName"/>
+        <result column="nick_name" jdbcType="VARCHAR" property="nickName"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="weixin" jdbcType="VARCHAR" property="weixin"/>
+        <result column="mail" jdbcType="VARCHAR" property="mail"/>
+        <result column="org" jdbcType="VARCHAR" property="org"/>
+        <result column="detail" jdbcType="VARCHAR" property="detail"/>
+        <result column="create_time" jdbcType="DATE" property="createTime"/>
+        <result column="update_time" jdbcType="DATE" property="updateTime"/>
+    </resultMap>
+
+    <parameterMap id="Customer" type="com.chinabigdata.po.CustomerPo"/>
+
+    <sql id="Base_Column_List">
+        id, customer_name, nick_name, phone
+    </sql>
+
+    <select id="getCustomerById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from customer
+        where id = #{id}
+    </select>
+
+</mapper>
