@@ -40,7 +40,7 @@ public class CustomerController {
     @GetMapping("deleteCustomer")
     public Integer delete(@RequestParam("id") Long id) {
         CustomerPo customerPo = new CustomerPo();
-        customerPo.setId(Integer.parseInt(id.toString()));
+//        customerPo.setId(Integer.parseInt(id.toString()));
         return customerService.delete(customerPo);
     }
 
@@ -48,7 +48,7 @@ public class CustomerController {
     @GetMapping("updateCustomer")
     public Integer update(@RequestParam("id") Long id) {
         CustomerPo customerPo = new CustomerPo();
-        customerPo.setId(Integer.parseInt(id.toString()));
+//        customerPo.setId(Integer.parseInt(id.toString()));
         customerPo.setDetail("修改后");
         return customerService.update(customerPo);
     }

@@ -15,10 +15,13 @@ import java.util.Date;
 @Table(name = "customer")
 public class CustomerPo {
     /**
+     * mongo集合名
+     */
+    final static public String COLLECTION_NAME = "customer";
+    /**
      * 主键
      **/
-    @Id
-    private Integer id;
+    private String id;
     /**
      * 客户姓名
      */

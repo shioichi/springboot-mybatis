@@ -9,22 +9,25 @@ spring:
      username: root
      password: 123456
      driver-class-name: com.mysql.jdbc.Driver
+  data:
+     mongodb:
+       uri: mongodb://127.0.0.1:27017/demo
 
 druid:
   datasource:
-    ## ÅäÖÃ¼à¿ØÍ³¼ÆÀ¹½Øfilters
+    ## é…ç½®ç›‘æ§ç»Ÿè®¡æ‹¦æˆªfilters
     filters: stat
-    ## Á¬½Ó³Ø×î´óÊ¹ÓÃÁ¬½ÓÊı
+    ## è¿æ¥æ± æœ€å¤§ä½¿ç”¨è¿æ¥æ•°
     maxActive: 20
-    ## ³õÊ¼»¯Á¬½Ó´óĞ¡
+    ## åˆå§‹åŒ–è¿æ¥å¤§å°
     initialSize: 3
-    ## »ñÈ¡Á¬½Ó×î´óµÈ´ıÊ±¼ä
+    ## è·å–è¿æ¥æœ€å¤§ç­‰å¾…æ—¶é—´
     maxWait: 60000
-    ## Á¬½Ó³Ø×îĞ¡¿ÕÏĞ
+    ## è¿æ¥æ± æœ€å°ç©ºé—²
     minIdle: 1
-    ## ÅäÖÃ¼ä¸ô¶à¾Ã²Å½øĞĞÒ»´Î¼ì²â£¬¼ì²âĞèÒª¹Ø±ÕµÄ¿ÕÏĞÁ¬½Ó£¬µ¥Î»ÊÇºÁÃë
+    ## é…ç½®é—´éš”å¤šä¹…æ‰è¿›è¡Œä¸€æ¬¡æ£€æµ‹ï¼Œæ£€æµ‹éœ€è¦å…³é—­çš„ç©ºé—²è¿æ¥ï¼Œå•ä½æ˜¯æ¯«ç§’
     timeBetweenEvictionRunsMillis: 60000
-    ## ÅäÖÃÒ»¸öÁ¬½ÓÔÚ³ØÖĞ×îĞ¡Éú´æµÄÊ±¼ä£¬µ¥Î»ÊÇºÁÃë
+    ## é…ç½®ä¸€ä¸ªè¿æ¥åœ¨æ± ä¸­æœ€å°ç”Ÿå­˜çš„æ—¶é—´ï¼Œå•ä½æ˜¯æ¯«ç§’
     minEvictableIdleTimeMillis: 300000
     validationQuery: select 'x'
     testWhileIdle: true
